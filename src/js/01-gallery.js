@@ -3,10 +3,9 @@ import { galleryItems } from './gallery-items';
 // Change code below this line
 
 // Описан в документации
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 // Дополнительный импорт стилей
-import "simplelightbox/dist/simple-lightbox.min.css";
-
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const createImagesMarkup = image => {
   return image
@@ -30,8 +29,5 @@ new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: '250',
 });
-
-
-
 
 //console.log(galleryItems);
