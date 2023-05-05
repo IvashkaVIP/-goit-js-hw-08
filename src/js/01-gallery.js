@@ -26,7 +26,7 @@ const galleryContainer = document.querySelector('.gallery');
 const imagesMarkup = createImagesMarkup(galleryItems);
 galleryContainer.insertAdjacentHTML('beforeend', imagesMarkup);
 
-let lightbox = new SimpleLightbox('.gallery a', {
+new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: '250',
 });
