@@ -21,24 +21,27 @@ function onFormSubmit(evt) {
     console.log(formData);
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
-    formData = {};
+    //formData = {};
 }
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function populateTextareaInput() {
-    const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    //console.log(savedData);
+    formData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    //console.log('saveData: ' , savedData);
 
-   if (savedData) {
-       refs.emailarea.value = savedData.email || '';
-       refs.textarea.value = savedData.message || '';
+   if (formData) {
+       refs.emailarea.value = formData.email || '';
+       refs.textarea.value = formData.message || '';
     }
         
 }
 ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function onFormInput(evt) {
-    formData[evt.target.name] = evt.target.value;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-    //console.log(formData);
+  
+  console.log(formData);
+  formData[evt.target.name] = evt.target.value;
+  console.log(`formData[${evt.target.name}]: = `, formData[evt.target.name]);
 
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+  //console.log(formData);
 }
