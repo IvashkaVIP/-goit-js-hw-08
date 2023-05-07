@@ -9,8 +9,8 @@ const refs = {
 const STORAGE_KEY = 'feedback-form-state';
 let formData = {};
 
-refs.form.elements.email.setAttribute('required', '');
-refs.form.elements.message.setAttribute('required', '');
+refs.form.email.setAttribute('required', '');
+refs.form.message.setAttribute('required', '');
 
 refs.form.addEventListener('input', throttle(onFormInput, 500));
 refs.form.addEventListener('submit', onFormSubmit);
